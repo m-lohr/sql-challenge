@@ -1,3 +1,4 @@
+--Option to drop parent tables and all respective child tables
 DROP TABLE IF EXISTS departments CASCADE;
 DROP TABLE IF EXISTS dept_emp CASCADE;
 DROP TABLE IF EXISTS dept_manager CASCADE;
@@ -5,6 +6,7 @@ DROP TABLE IF EXISTS employees CASCADE;
 DROP TABLE IF EXISTS salaries CASCADE;
 DROP TABLE IF EXISTS titles CASCADE;
 
+--Six tables that correspond with .csv files in project folder
 
 CREATE TABLE "departments" (
     "dept_no" VARCHAR   NOT NULL,
@@ -49,6 +51,8 @@ CREATE TABLE "titles" (
         "title_id"
      )
 );
+
+--Alter tables to apply foreign keys to various tables
 
 ALTER TABLE "dept_emp" ADD CONSTRAINT "fk_dept_emp_emp_no" FOREIGN KEY("emp_no")
 REFERENCES "employees" ("emp_no");
